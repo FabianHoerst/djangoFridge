@@ -1,0 +1,30 @@
+{% extends "recipe/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row margin-top-45">
+    <div class="row">
+        </br>
+        <h2 align="center"> Register New User</h2>
+        <div align="center" style="max-width:400px; margin:0 auto;">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {% for field in form %}
+                    <h3>{{field.label}}</h3>
+                    {{field}}
+                    </br>
+                    </br>
+                {% endfor %}
+                {{form.errors}}
+                <input type="submit" class="btn btn-dark" value="Create User"></input>
+                <hr>
+                Already have an account?
+                </br>
+                <a class="btn btn-dark" href="/loginPage/" role="button">Sign in</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

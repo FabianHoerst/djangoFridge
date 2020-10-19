@@ -1,0 +1,66 @@
+{% extends "recipe/base.html" %}
+{% load static %}
+{% block content %}
+<div class="col-8 no-gutter text-center fill">
+    <div class="row margin-top-45">
+        <div class="row">
+            <h3>
+                <!-- Show the title of the recipe -->
+                {{title}}
+            </h3>
+            </br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Ingredients:</p>
+        </div>
+        <div class="col-md-8">
+            <!-- Show the ingredient list with a for loop -->
+            {% for key, value in usedIngredients.items %}
+                <p style="text-align:center;">
+                    {{value}}
+                </p>
+            {% endfor %}
+            {% for key, value in missedIngredients.items %}
+                <p style="text-align:center;">
+                    {{value}}
+                </p>
+            {% endfor %}
+        </div>
+   </div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Instructions:</p>
+        </div>
+    </div>
+    <!-- Show the instruction with the corresponding step-number -->
+    {% for key, value in instructions.items %}
+        <div class="row">
+            <div class="col-md-3">
+                <p>{{key}}: </p>
+            </div>
+            <div class="col-md-8">
+                <p style="text-align:center;">
+                    {{value}}
+                </p>
+            </div>
+        </div>
+   {% endfor %}
+    <!-- Show the image of the recipe -->
+    <div class="row" style="background-color:#404040">
+        <img src={{image}} alt="" class="img-fluid" >
+        </br>
+    </div>
+    <!-- Go back button -->
+    <div class="row">
+        </br>
+        <a class="btn btn-dark" href="/" role="button">Go back to start</a>
+        </br></br>
+    </div>
+</div>
+<div class="col">
+</div>
+
+{% endblock %}
+

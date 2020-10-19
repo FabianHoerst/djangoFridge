@@ -1,0 +1,78 @@
+{% extends "recipe/base.html" %}
+
+{% block content %}
+<!-- Show the 3 recipes -->
+<div class="row margin-top-45 text-center"><h1>Recipe comparison</h1><hr></div>
+
+<!-- Show recipe 1 -->
+<div class="col-md-4 no-gutter text-center">
+    <div class="row">
+        <div style="max-width:400px; margin:0 auto;">
+            <!-- Show title, image, used ingredients and needed ingredients -->
+            <h3>{{title1}}</h3>
+            <img src={{image1}} alt="" class="img-fluid" >
+            <h4>Used Ingredients: {{usedIngredientCount1}}</h4>
+            {% for key, value in usedIngredients1.items %}
+            <h5>{{value}}</h5>
+            {% endfor %}
+            <h4>Needed Ingredients: {{missedIngredientCount1}}</h4>
+            {% for key, value in missedIngredients1.items %}
+            <h5>{{value}}</h5>
+            {% endfor %}
+            <!-- Selection button -->
+            <form class = "form" style="margin:auto" method="POST"> {% csrf_token %}
+                <input type="submit" name="selection1" class="btn btn-dark" value="Show the recipe"></input>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<!-- Show recipe 2 -->
+<div class="col-md-4 no-gutter text-center">
+    <div class="row">
+        <div style="max-width:400px; margin:0 auto;">
+            <!-- Show title, image, used ingredients and needed ingredients -->
+            <h3>{{title2}}</h3>
+            <img src={{image2}} alt="" class="img-fluid" >
+            <h4>Used Ingredients: {{usedIngredientCount2}}</h4>
+            {% for key, value in usedIngredients2.items %}
+            <h5>{{value}}</h5>
+            {% endfor %}
+            <h4>Needed Ingredients: {{missedIngredientCount2}}</h4>
+            {% for key, value in missedIngredients2.items %}
+            <h5>{{value}}</h5>
+            {% endfor %}
+            <!-- Selection button -->
+            <form class = "form" style="margin:auto" method="POST"> {% csrf_token %}
+                <input type="submit" name="selection2" class="btn btn-dark" value="Show the recipe"></input>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<!-- Show recipe 3 -->
+<div class="col-md-4 no-gutter text-center">
+    <div class="row">
+        <div style="max-width:400px; margin:0 auto;">
+            <!-- Show title, image, used ingredients and needed ingredients -->
+            <h3>{{title3}}</h3>
+            <img src={{image3}} alt="" class="img-fluid" >
+            <h4>Used Ingredients: {{usedIngredientCount3}}</h4>
+            {% for key, value in usedIngredients3.items %}
+            <h5>{{value}}</h5>
+            {% endfor %}
+            <h4>Needed Ingredients: {{missedIngredientCount3}}</h4>
+            {% for key, value in missedIngredients3.items %}
+            <h5>{{value}}</h5>
+            {% endfor %}
+            <!-- Selection button -->
+            <form class = "form" style="margin:auto" method="POST"> {% csrf_token %}
+                <input type="submit" name="selection3" class="btn btn-dark" value="Show the recipe"></input>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}

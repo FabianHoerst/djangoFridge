@@ -1,0 +1,84 @@
+{% load static %}
+
+<!-- Based on the echoes template:
+    https://www.free-css.com/free-css-templates/page232/echoes
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Whats in my fridge</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="Fabian Hörst" content="">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="col-md-12">
+                <div class="nav">
+                    <button class="btn-nav">
+                    <span class="icon-bar inverted top"></span>
+                    <span class="icon-bar inverted middle"></span>
+                    <span class="icon-bar inverted bottom"></span>
+                    </button>
+                </div>
+                <a class="navbar-brand" href="/">
+                    <img class="logo" src="{% static 'img/logo.png'%}" alt="">
+                </a>
+                <div class="nav-content hideNav hidden bg-dark">
+                    <ul class="nav-list vcenter">
+                        <li class="nav-item"><a class="item-anchor" href="/">Start</a></li>
+                        <li class="nav-item"><a class="item-anchor" href="/statistics/">Last searched and Statistics</a></li>
+                        <li class="nav-item"><a class="item-anchor" href="/aboutme/">About me</a></li>
+                        <li class="nav-item"><a class="item-anchor" href="/dsgvo/">Data privacy statement</a></li>
+                        <hr>
+                        <li class="nav-item"><a class="item-anchor" href="/loginPage/">Login</a></li>
+                        <li class="nav-item"><a class="item-anchor" href="/register/">Register</a></li>
+                        <li class="nav-item"><a class="item-anchor" href="/logout/">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header -->
+        <div class="span12">
+            <!-- here the content block starts -->
+            {% block content %}
+            <div class="col-md-6 no-gutter text-center fill">
+                <h2 class="vcenter">Find your recipe by Fabian Hörst</h2>
+            </div>
+            <div class="col-md-6 no-gutter text-center">
+                <div id="header" data-speed="4" data-type="background">
+                    <div id="headslide" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="{% static 'img/4.jpg' %}" alt="Slide">
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'img/3.jpg' %}" alt="Slide">
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'img/1.jpg' %}" alt="Slide">
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'img/2.jpg' %}" alt="Slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+        <div style="clear:both;"></div>
+        <!-- script -->
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/menu-color.js' %}"></script>
+        <script src="{% static 'js/modernizr.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

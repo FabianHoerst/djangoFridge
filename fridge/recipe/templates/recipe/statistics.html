@@ -1,0 +1,52 @@
+{% extends "recipe/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="col-8 no-gutter text-center fill">
+    <div class="row margin-top-45">
+        <div class="row">
+            </br>
+            <h2>
+                Information about the latest ingredient search and selected recipes
+            </h2>
+            <hr>
+            </br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+            <h3 align="left">Searched Ingredient</h3>
+        </div>
+        <div class="col-md-6">
+            <h3 align="left">Selected Recipe</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+            {% for element in searched_ingredients %}
+                <p style="text-align:left;">
+                    {{element}}
+                </p>
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            <!-- Show the ingredient list with a for loop -->
+            {% for element in selected_recipe %}
+                <p style="text-align:left;">
+                    {{element}}
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Go back button -->
+    <div class="row">
+        </br>
+        <a class="btn btn-dark" href="/" role="button">Go back to start</a>
+        </br></br>
+    </div>
+</div>
+{% endblock %}
